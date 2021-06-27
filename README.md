@@ -1,6 +1,8 @@
-# TodoApp
+## 🛠 Angular todo app
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.0.
+## 💻 Live Link
+
+- `Project` https://todo-app-angular-xi.vercel.app/
 
 ## Development server
 
