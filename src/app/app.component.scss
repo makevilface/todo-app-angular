@@ -20,8 +20,14 @@ mat-toolbar {
 }
 
 .content-wrapper {
-  max-width: 1400px;
+  max-width: 1240px;
   margin: auto;
+  .add-button {
+    align-items: center;
+    &:hover {
+      color: #dd0031;
+    }
+  }
 }
 
 .container-wrapper {
@@ -40,6 +46,10 @@ mat-toolbar {
   border-radius: 4px;
 }
 
+.complete {
+  text-decoration: line-through;
+}
+
 app-new-task {
   margin-bottom: 30px;
 }
@@ -56,5 +66,5 @@ app-new-task {
 }
 
 .cdk-drag-placeholder {
-  opacity: 0;
+  opacity: 0.3;
 }

@@ -15,8 +15,10 @@ import { Task } from './task/task';
 })
 export class AppComponent {
   todo: Task[] = [{ title: 'Say "👋"', desc: 'Say hello to the team' }];
-  inProgress: Task[] = [{ title: 'Learn Angular', desc: 'Or start learning' }];
-  done: Task[] = [];
+  inProgress: Task[] = [
+    { title: 'Learn Angular 💻', desc: 'Or start learning' },
+  ];
+  done: Task[] = [{ title: 'Buy avocado 🥑', desc: '' }];
 
   editTask(list: 'done' | 'todo' | 'inProgress', task: Task): void {
     const dialogRef = this.dialog.open(TaskDialogComponent, {
