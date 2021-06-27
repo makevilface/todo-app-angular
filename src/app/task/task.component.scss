@@ -2,7 +2,17 @@
   display: block;
 }
 
-.item {
+.task {
   margin-bottom: 10px;
   cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-button {
+  height: 3rem;
+  max-width: 2rem;
+  &:hover {
+    color: #dd0031;
+  }
 }

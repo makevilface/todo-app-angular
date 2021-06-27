@@ -13,8 +13,7 @@
   <button mat-button (click)="cancel()">Cancel</button>
   <button
     *ngIf="data.enableDelete"
-    mat-fab
-    color="primary"
+    mat-button
     aria-label="Delete"
     [mat-dialog-close]="{ task: data.task, delete: true }"
   >

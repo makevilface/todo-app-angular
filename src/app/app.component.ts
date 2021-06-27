@@ -1,11 +1,12 @@
+import { Component } from '@angular/core';
+import { CdkDragDrop, transferArrayItem } from '@angular/cdk/drag-drop';
+import { MatDialog } from '@angular/material/dialog';
+
 import {
   TaskDialogComponent,
   TaskDialogResult,
 } from './task-dialog/task-dialog.component';
-import { Component } from '@angular/core';
 import { Task } from './task/task';
-import { CdkDragDrop, transferArrayItem } from '@angular/cdk/drag-drop';
-import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-root',
@@ -13,11 +14,8 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  todo: Task[] = [
-    { title: 'Выучить Angular', desc: 'Ну или начать учить' },
-    { title: 'Выучить Angular', desc: 'Ну или начать учить' },
-  ];
-  inProgress: Task[] = [];
+  todo: Task[] = [{ title: 'Say "👋"', desc: 'Say hello to the team' }];
+  inProgress: Task[] = [{ title: 'Learn Angular', desc: 'Or start learning' }];
   done: Task[] = [];
 
   editTask(list: 'done' | 'todo' | 'inProgress', task: Task): void {
@@ -31,6 +29,8 @@ export class AppComponent {
     dialogRef.afterClosed().subscribe((result: TaskDialogResult) => {
       const dataList = this[list];
       const taskIndex = dataList.indexOf(task);
+      console.log(result);
+
       if (result.delete) {
         dataList.splice(taskIndex, 1);
       } else {
@@ -62,8 +62,8 @@ export class AppComponent {
         task: {},
       },
     });
-    dialogRef
-      .afterClosed()
-      .subscribe((result: TaskDialogResult) => this.todo.push(result.task));
+    dialogRef.afterClosed().subscribe((result: TaskDialogResult) => {
+      result.task.title && this.todo.push(result.task);
+    });
   }
 }

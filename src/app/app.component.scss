@@ -1,9 +1,22 @@
 mat-toolbar {
   margin-bottom: 20px;
+  background-color: #fff;
 }
 
-mat-toolbar > span {
-  margin-left: 10px;
+.header-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    color: #dd0031;
+  }
+  svg {
+    height: 30px;
+    width: 30px;
+  }
+  span {
+    margin-left: 10px;
+  }
 }
 
 .content-wrapper {
@@ -32,10 +45,9 @@ app-new-task {
 }
 
 .empty-label {
-  font-size: 2em;
+  font-size: 1.25rem;
   padding-top: 10px;
   text-align: center;
-  opacity: 0.2;
 }
 
 // Когда отпускаем элемент
